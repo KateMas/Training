@@ -1,0 +1,267 @@
+@import ../../node_modules/normalize.css/normalize.css
+@import container.sass
+
+$Duration: .3s
+$cWhite: #fff
+$cBlack: #000
+
+body
+  background-color: lavenderblush
+  font-family: 'Roboto', sans-serif
+
+
+//header
+header
+  position: fixed
+  z-index: 10
+  width: 100%
+  min-height: 80px
+  background-color: lavenderblush
+  .gradient
+    position: relative
+    &:before
+      position: absolute
+      top: 100%
+      left: 0
+      width: 100%
+      height: 5px
+      background: radial-gradient(ellipse at top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 70%)
+      content: ''
+    &:after
+      clear: both
+      display: table
+      content: ''
+  &.open
+    .navtoggle
+      .l1
+        transform: rotate(45deg) translate(0, 11px)
+      .l2
+        opacity: 0
+      .l3
+        transform: rotate(-45deg) translate(0, -11px)
+  .navtoggle
+    @media(max-width: 700px)
+      position: absolute
+      top: 31px
+      right: 20px
+      z-index: 100
+      display: inline-block
+      width: 30px
+      height: 18px
+      cursor: pointer
+      span
+        @media(max-width: 700px)
+          position: absolute
+          top: 0
+          display: inline-block
+          width: 100%
+          height: 2px
+          background-color: #501884
+          transition: .3s
+      .l2
+        @media(max-width: 700px)
+          top: 8px
+      .l3
+        @media(max-width: 700px)
+          top: 16px
+  .logo
+    display: inline-block
+    width: 50px
+    height: 50px
+    margin: 15px 0 15px 20px
+    background-color: aquamarine
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+    line-height: 50px
+    text-align: center
+    text-decoration: none
+    font-size: 20px
+  nav
+    float: right
+    margin-right: 20px
+    @media(max-width: 700px)
+      position: fixed
+      right: -100%
+      z-index: 10
+      float: none
+      display: block
+      height: 100vh
+      margin-right: 0
+      transition: .3s
+    &.open-navigation
+      right: 0
+      width: 100%
+      background-color: rgba(#fff, .5)
+    ul
+      margin: 0
+      padding-left: 0
+      @media(max-width: 700px)
+        text-align: center
+      li
+        position: relative
+        display: inline-block
+        vertical-align: middle
+        @media(max-width: 700px)
+          display: block
+        &:not(:last-of-type)
+          margin-right: 20px
+          @media(max-width: 700px)
+            margin-right: 0
+        a
+          text-decoration: none
+          line-height: 80px
+          font-size: 16px
+          font-weight: 500
+          color: #8a2be2
+          transition: .3s
+
+          &:hover
+            box-shadow: #aaa 1px 0px 5px
+            color: #501884
+        .sub-menu
+          position: absolute
+          top: 60px
+          right: 0px
+          left: 0px
+          z-index: 10
+          display: none
+          width: 100px
+          background-color: lavenderblush
+          box-shadow: #aaa 1px 3px 5px
+          li
+            display: block
+            margin-right: 0
+            padding-left: 10px
+            a
+              line-height: 30px
+
+
+.placeholder
+  height: 80px
+h2
+  margin: 0
+section
+  padding-top: 20px
+
+//advantages
+.advantages
+  height: 400px
+  background-color: aquamarine
+
+.about
+  height: 400px
+  background-color: crimson
+
+.portfolio
+  height: 400px
+  background-color: forestgreen
+
+//----------------------------------------partners
+.partners
+  background-color: goldenrod
+  &:before
+    clear: both
+    display: table
+    content: ''
+  .list-companies
+    padding: 58px 0 0
+    overflow: hidden
+    .card-1
+      background-image: url('http://placehold.it/600x300/8ab9c1')
+    .card-2
+      background-image: url('http://placehold.it/600x300/b78ae0')
+    .card-3
+      background-image: url('http://placehold.it/600x300/7da94f')
+    .card-4
+      background-image: url('http://placehold.it/600x300/b13f3f')
+    .effect-dark
+      position: relative
+      float: left
+      width: 25%
+      height: 300px
+      margin: 0
+      background-position: 50%
+      text-align: center
+      cursor: pointer
+      @media(max-width: 900px)
+        width: 50%
+      @media(max-width: 700px)
+        width: 100%
+      &:before
+        display: inline-block
+        height: 100%
+        vertical-align: middle
+        content: ''
+      &:after
+        position: absolute
+        top: 50%
+        left: 0
+        width: 100%
+        height: 50px
+        margin: -25px 0 0
+        background-color: rgba(#000, .8)
+        content: ''
+        transition: all .3s .3s ease
+      &:hover
+        &:after
+          top: 0
+          height: 100%
+          margin: 0
+          transition-delay: .3s
+        img
+          opacity: 0
+          transition-delay: .105s
+        figcaption
+          opacity: 1
+          transition-delay: .45s
+      img
+        position: relative
+        z-index: 2
+        display: inline-block
+        vertical-align: middle
+        transition: all .3s .39s ease
+      figcaption
+        position: absolute
+        top: 0
+        z-index: 2
+        display: table
+        height: 100%
+        padding: 0 50px
+        opacity: 0
+        transition: opacity .3s .21s ease
+        h3,p
+          font-size: 14px
+          color: #fff
+        h3
+          display: table-cell
+          padding-bottom: 10px
+          vertical-align: bottom
+        p
+          display: table-row
+          vertical-align: middle
+
+
+.contacts
+  height: 400px
+  background-color: teal
+  
+.wrapper-spiner
+  margin-top: 150px
+  text-align: center
+  .spinner
+    display: inline-block
+    width: 100px
+    height: 100px
+    background-image: url('images/spinner-circle.svg')
+    -webkit-background-size:
+    background-size: cover
+    animation: animationFrames linear 1s
+    animation-iteration-count: infinite
+
+@keyframes animationFrames
+  100%
+    transform:  translate(0px,0px) rotate(360deg)
+
+.new p
+  display: none
